@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="649d07ff-3301-4a7e-bc3f-336a3f1b038a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/apolion/games/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apolion/games/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apolion/games/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/apolion/games/TowerBreakers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/apolion/games/TowerBreakers.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,9 +30,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2t6XpgwebONCNxEyCpDZm4nY4FF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -43,9 +45,15 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/anton/Documents/Apps/java/hackerrank/hackerranksolutions/src/main/java/apolion/games"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anton\Documents\Apps\java\hackerrank\hackerranksolutions\src\main\java\apolion\games" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Solution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>

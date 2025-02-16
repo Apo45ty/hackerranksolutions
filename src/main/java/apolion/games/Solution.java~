@@ -106,46 +106,48 @@ class Result {
         return result;
     }
 
-//    public static Map<Pair,LinkedList<LinkedHashSet<Move>>> cache = new HashMap();
+    public static Map<Pair,LinkedList<LinkedHashSet<Move>>> cache = new HashMap();
     public static LinkedList<LinkedHashSet<Move>> getAllPossibleMoves(int m,int i, LinkedHashSet<Move> currMoves, LinkedList<LinkedHashSet<Move>> possibleMoves){
+        while(true){
 
-//        if(cache.containsKey(new Pair(m,i))){
-//            System.out.println("cached");
-//            return cache.get(new Pair(m,i));
-//        }
-        if(m==1||i>=m||i<=0)
-        {
-            return possibleMoves;
-        }
-        int x = m;
-        int reduceAmount = m -i;
-        int y = m - reduceAmount;
-        if(x%y==0){
-            Move move = new Move();
-            move.x = x;
-            move.y = y;
-            move.isAlreadyLinked = false;
-            move.reduceAmount = reduceAmount;
-
-            Move prevMove = null;
-            if(currMoves.size()>0){
-                prevMove = currMoves.getFirst();
+            if(cache.containsKey(new Pair(m,i))){
+                System.out.println("cached");
+                return cache.get(new Pair(m,i));
             }
-            if(prevMove == null||prevMove.isAlreadyLinked){
-                LinkedHashSet<Move> moves = new LinkedHashSet<>(currMoves);
-                moves.add(move);
-                possibleMoves.add(moves);
-                addAllUniqueElements(possibleMoves,getAllPossibleMoves(y,1,moves,possibleMoves));
-//                cache.put(new Pair(m,i),possibleMoves);
-            } else {
-                currMoves.add(move);
-                prevMove.isAlreadyLinked=true;
-                addAllUniqueElements(possibleMoves,getAllPossibleMoves(y,1,currMoves,possibleMoves));
-//                cache.put(new Pair(m,i),possibleMoves);
+            if(m==1||i>=m||i<=0)
+            {
+                return possibleMoves;
             }
+            int x = m;
+            int reduceAmount = m -i;
+            int y = m - reduceAmount;
+            if(x%y==0){
+                Move move = new Move();
+                move.x = x;
+                move.y = y;
+                move.isAlreadyLinked = false;
+                move.reduceAmount = reduceAmount;
 
+                Move prevMove = null;
+                if(currMoves.size()>0){
+                    prevMove = currMoves.getFirst();
+                }
+                if(prevMove == null||prevMove.isAlreadyLinked){
+                    LinkedHashSet<Move> moves = new LinkedHashSet<>(currMoves);
+                    moves.add(move);
+                    possibleMoves.add(moves);
+                    addAllUniqueElements(possibleMoves,getAllPossibleMoves(y,1,moves,possibleMoves));
+                    cache.put(new Pair(m,i),possibleMoves);
+                } else {
+                    currMoves.add(move);
+                    prevMove.isAlreadyLinked=true;
+                    addAllUniqueElements(possibleMoves,getAllPossibleMoves(y,1,currMoves,possibleMoves));
+                    cache.put(new Pair(m,i),possibleMoves);
+                }
+
+            }
+            i++;
         }
-        return getAllPossibleMoves(m,i+1,currMoves,possibleMoves);
     }
 
     public static void addAllUniqueElements(LinkedList<LinkedHashSet<Move>> targetList, LinkedList<LinkedHashSet<Move>> sourceList) {
